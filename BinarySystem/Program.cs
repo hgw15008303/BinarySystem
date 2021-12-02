@@ -63,9 +63,10 @@ namespace BinarySystem
             System.IO.File.WriteAllText(@"function2.txt", string.Empty);
             if (intword.Contains(","))
             {
+                string[] intwordsplit = intword.Split(',');
                 for (int i = 0; i < Regex.Matches(intword, ",").Count +1; i++)
                   
-                binary("function2.txt", intword, (byte)(0x00+i));
+                binary("function2.txt", intwordsplit[i], (byte)(0x00+i));
             }
             else
             {
